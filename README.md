@@ -1,8 +1,13 @@
 # Overview
 
 1. Ingest data	into	a	Kafka	topic	from	a	provided	dataset.	
-2. Deploy	a	Flink	SQL	job	in	Ververica	Cloud	to	process	the	data.	
-3. Calculate	aggregated	analytics	as	described	below.	
+2. Deploy a	Flink	SQL job in Ververica	Cloud	to	process the	data.	
+3. Calculate aggregated	analytics as described below.
+   1.	Calculate the play count per track name and show on the UI the	tracks which has more than	120plays.	
+   2.	Analyze daily engagement of the most played track from the first query:
+      -	Daily	play counts.
+      -	Daily	total	play duration in minutes.
+      -	Results should	allow	identifying	how interest changes	daily	over time for that track.
 
 
 # Environment Setup Step
@@ -57,3 +62,7 @@ pip install kafka-python-ng pandas
    ```
 
 # How to deploy the Flink SQL in Ververica Cloud
+1. login [ververica cloud](https://app.ververica.cloud/dashboard)
+2. [new workspace](https://app.ververica.cloud/create-workspace) until you see the workspace is in running status
+   <img width="1031" height="177" alt="image" src="https://github.com/user-attachments/assets/1ed93c49-ae87-4c8a-8d23-e34714a863b4" />
+
