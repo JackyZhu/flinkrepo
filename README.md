@@ -87,11 +87,12 @@ pip install kafka-python-ng pandas
 
 # Deploy most_played_track_daily_engagement Flink SQL
 
-1. go to **SQL Editor** page and click **New from file** to import `src/flinksql/most_played_track_daily_engagement.sql`
-2. replace **properties.bootstrap.servers** with your vm public IP in the sql
-3. verify your result in SQL Editor UI:
+1. After analyzing the result of `src/flinksql/popular_tracks.sql`, we get **Ode To The Mets** as the most played track
+2. go to **SQL Editor** page and click **New from file** to import `src/flinksql/most_played_track_daily_engagement.sql`
+3. replace **properties.bootstrap.servers** with your vm public IP in the sql
+4. verify your result in SQL Editor UI:
    <img width="2544" height="1314" alt="image" src="https://github.com/user-attachments/assets/38aa89b0-2fb8-487e-99b7-e68b3a3e8ad7" />
-
+5. alternatively, verify your result in `resources/most_played_track_daily_engagement.csv`
 
 
 
