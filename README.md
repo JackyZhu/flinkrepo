@@ -92,7 +92,7 @@ pip install kafka-python-ng pandas
 3. replace **properties.bootstrap.servers** with your vm public IP in the sql
 4. verify your result in SQL Editor UI:
    <img width="2544" height="1314" alt="image" src="https://github.com/user-attachments/assets/38aa89b0-2fb8-487e-99b7-e68b3a3e8ad7" />
-5. alternatively, verify your result in `resources/most_played_track_daily_engagement.csv`
+5. alternatively, verify your result in `most_played_track_daily_engagement.csv`
 
 
 
