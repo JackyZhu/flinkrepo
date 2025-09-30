@@ -5,9 +5,19 @@
 3. Calculate	aggregated	analytics	as	described	below.	
 
 
-# Environment Setup Stepa
-1. Kafka installation
-2. 
+# Environment Setup Step
+
+## Azure VM
+
+Create an empty azure Ubuntu24 VM with public IP through [Azure Portal](https://portal.azure.com/#home)
+
+## Kafka installation
+
+1. login to VM terminal use your ssh user with sudo permission
+2. upload `src/kafka/insallKafka.sh` to `/home/<your ssh user>`
+3. `sh installKafka.sh <your vm public IP> <your ssh user>`
+
+## Python setup
 
 
 
