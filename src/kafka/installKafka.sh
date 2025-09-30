@@ -16,6 +16,8 @@ fi
 
 cd ~
 
+# install openjdk-11-jdk
+
 sudo apt update
 sudo apt search openjdk
 sudo apt install openjdk-11-jdk -y
@@ -25,16 +27,18 @@ mkdir kafka
 
 cd kafka
 
+# download kafka_2.12-3.9.1.tgz
 wget https://dlcdn.apache.org/kafka/3.9.1/kafka_2.12-3.9.1.tgz
 
 tar -xvzf kafka_2.12-3.9.1.tgz
 
 cd kafka_2.12-3.9.1/
 
+# configure advertised.listeners to your broker public IP so that any public consumer or producer can connect
 sed -i '/^#advertised.listeners=/c\advertised.listeners=PLAINTEXT://'"$broker"':9092'
 
 
-
+# create zookeeper.service and kafka.service file so that we can use systemctl to manage kafka service
 zkService="
 [Unit]
 Description=Apache Zookeeper Server
@@ -66,6 +70,8 @@ Restart=on-abnormal
 [Install]
 WantedBy=multi-user.target
 "
+
+# replace sshuser with your ssh user name which has sudo permission
 
 zkService=`echo "$zkService" | sed -e 's/sshuser/'"$user"'/g'`
 kafkaService=`echo "$kafkaService" | sed -e 's/sshuser/'"$user"'/g'`
